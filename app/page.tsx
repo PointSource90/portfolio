@@ -24,13 +24,13 @@ export default function Page() {
   ]
 
   return (
-    <main className="min-h-screen bg-[#0a0a0a] text-white overflow-x-hidden">
+    <main className="min-h-screen bg-[#0a0a0a] text-white overflow-x-hidden pb-40">
       {/* Hero Section */}
       <section className="flex min-h-screen flex-col items-center justify-center px-4 py-20 relative">
         <ParallaxSection speed={0.3} className="absolute inset-0 -z-10">
           <div className="absolute inset-0 bg-gradient-to-br from-pink-500/10 via-transparent to-blue-500/10 blur-3xl" />
         </ParallaxSection>
-        
+
         <div className="mx-auto max-w-4xl text-center relative z-10">
           <EnhancedReveal direction="fade" delay={0.2}>
             <h1 className="mb-6 text-balance font-sans text-6xl font-black leading-[0.95] tracking-tighter md:text-7xl lg:text-8xl text-white">
@@ -49,13 +49,13 @@ export default function Page() {
               </AnimatedGradientText>
             </h1>
           </EnhancedReveal>
-          
+
           <EnhancedReveal direction="up" delay={0.4} distance={30}>
             <p className="mb-10 text-balance text-lg text-white/60 md:text-xl">
               Transformez votre présence en ligne avec des sites modernes, performants et optimisés pour la conversion.
             </p>
           </EnhancedReveal>
-          
+
           <EnhancedReveal direction="up" delay={0.6} distance={30}>
             <motion.div
               whileHover={{ scale: 1.05 }}
@@ -104,7 +104,7 @@ export default function Page() {
         <ParallaxSection speed={0.2} className="absolute inset-0 -z-10">
           <div className="absolute inset-0 bg-gradient-to-t from-purple-500/5 via-transparent to-pink-500/5 blur-3xl" />
         </ParallaxSection>
-        
+
         <div className="mx-auto max-w-6xl relative z-10">
           <EnhancedReveal direction="up" delay={0.1}>
             <h2 className="mb-16 text-center text-4xl font-bold md:text-5xl text-white">
@@ -120,7 +120,7 @@ export default function Page() {
               </AnimatedGradientText>
             </h2>
           </EnhancedReveal>
-          
+
           <RevealOnView staggerChildren className="grid gap-8 sm:grid-cols-2 max-w-4xl mx-auto">
             {demos.map((demo, index) => (
               <RevealOnView key={demo.title} delay={index * 0.1} intensity="soft">
@@ -136,7 +136,7 @@ export default function Page() {
         <ParallaxSection speed={0.15} className="absolute inset-0 -z-10">
           <div className="absolute inset-0 bg-gradient-to-b from-blue-500/5 via-transparent to-emerald-500/5 blur-3xl" />
         </ParallaxSection>
-        
+
         <div className="mx-auto max-w-6xl relative z-10">
           <EnhancedReveal direction="up" delay={0.1}>
             <h2 className="mb-12 text-center text-4xl font-bold md:text-5xl text-white">
@@ -153,7 +153,7 @@ export default function Page() {
               </AnimatedGradientText>
             </h2>
           </EnhancedReveal>
-          
+
           <div className="grid gap-8 md:grid-cols-3">
             {[
               { title: "Design Moderne", desc: "Des interfaces élégantes et intuitives" },
@@ -194,7 +194,7 @@ export default function Page() {
         <ParallaxSection speed={0.1}>
           <div className="mx-auto max-w-6xl text-center">
             <EnhancedReveal direction="fade" delay={0.1}>
-              <p className="mb-2 text-sm text-white/60">
+              <p className="mb-2 text-sm text-white/90">
                 Réalisé par{" "}
                 <Link href="mailto:contact@agence.com" className="hover:underline transition-colors inline-block">
                   <AnimatedGradientText
@@ -211,7 +211,7 @@ export default function Page() {
               </p>
             </EnhancedReveal>
             <EnhancedReveal direction="fade" delay={0.2}>
-              <Link href="mailto:contact@agence.com" className="text-sm text-white/40 hover:text-white/60 hover:underline transition-colors">
+              <Link href="mailto:contact@agence.com" className="text-sm text-white/80 hover:text-white hover:underline transition-colors">
                 contact@agence.com
               </Link>
             </EnhancedReveal>

@@ -1,6 +1,7 @@
 import type React from "react"
 import type { Metadata } from "next"
 import "./globals.css"
+import { SmoothScroll } from "@/components/smooth-scroll"
 
 export const metadata: Metadata = {
   title: "Digital Showroom - Sites web qui remplissent votre agenda",
@@ -29,7 +30,9 @@ export default function RootLayout({
 html { font-family: var(--font-sans); }
         `}</style>
       </head>
-      <body>{children}</body>
+      <body>
+        <SmoothScroll>{children}</SmoothScroll>
+      </body>
     </html>
   )
 }
