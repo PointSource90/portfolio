@@ -2,29 +2,17 @@
 
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { BrowserMockupCard } from "@/components/browser-mockup-card"
 import { AnimatedGradientText } from "@/components/animated-gradient-text"
 import { EnhancedReveal } from "@/components/enhanced-reveal"
 import { ParallaxSection } from "@/components/parallax-section"
-import RevealOnView from "@/components/reveal-on-view"
+import { WhyChooseUsSection } from "@/components/why-choose-us"
+import { ProjectsCarousel } from "@/components/projects-carousel"
+import { ContactSection } from "@/components/contact-section"
 import { motion } from "framer-motion"
 
 export default function Page() {
-  const demos = [
-    {
-      title: "Salon de Coiffure",
-      gradient: "from-pink-500 via-rose-500 to-orange-500",
-      href: "https://example.com/salon-demo",
-    },
-    {
-      title: "Restaurant",
-      gradient: "from-emerald-500 via-teal-500 to-cyan-500",
-      href: "https://example.com/restaurant-demo",
-    },
-  ]
-
   return (
-    <main className="min-h-screen bg-[#0a0a0a] text-white overflow-x-hidden pb-40">
+    <main className="min-h-screen bg-[#0a0a0a] text-white overflow-x-hidden pb-[50vh]">
       {/* Hero Section */}
       <section className="flex min-h-screen flex-col items-center justify-center px-4 py-20 relative">
         <ParallaxSection speed={0.3} className="absolute inset-0 -z-10">
@@ -99,39 +87,7 @@ export default function Page() {
         </div>
       </section>
 
-      {/* Gallery Section */}
-      <section id="galerie" className="px-4 py-20 relative">
-        <ParallaxSection speed={0.2} className="absolute inset-0 -z-10">
-          <div className="absolute inset-0 bg-gradient-to-t from-purple-500/5 via-transparent to-pink-500/5 blur-3xl" />
-        </ParallaxSection>
-
-        <div className="mx-auto max-w-6xl relative z-10">
-          <EnhancedReveal direction="up" delay={0.1}>
-            <h2 className="mb-16 text-center text-4xl font-bold md:text-5xl text-white">
-              <AnimatedGradientText
-                gradientClasses={[
-                  "from-pink-500 via-rose-500 to-orange-500",
-                  "from-blue-500 via-cyan-500 to-teal-500",
-                ]}
-                autoAnimateInterval={10000}
-                transitionDuration={4}
-              >
-                Nos réalisations
-              </AnimatedGradientText>
-            </h2>
-          </EnhancedReveal>
-
-          <RevealOnView staggerChildren className="grid gap-8 sm:grid-cols-2 max-w-4xl mx-auto">
-            {demos.map((demo, index) => (
-              <RevealOnView key={demo.title} delay={index * 0.1} intensity="soft">
-                <BrowserMockupCard title={demo.title} gradient={demo.gradient} href={demo.href} />
-              </RevealOnView>
-            ))}
-          </RevealOnView>
-        </div>
-      </section>
-
-      {/* Features Section */}
+      {/* Why Choose Us Section */}
       <section className="px-4 py-20 relative">
         <ParallaxSection speed={0.15} className="absolute inset-0 -z-10">
           <div className="absolute inset-0 bg-gradient-to-b from-blue-500/5 via-transparent to-emerald-500/5 blur-3xl" />
@@ -154,38 +110,44 @@ export default function Page() {
             </h2>
           </EnhancedReveal>
 
-          <div className="grid gap-8 md:grid-cols-3">
-            {[
-              { title: "Design Moderne", desc: "Des interfaces élégantes et intuitives" },
-              { title: "Performance", desc: "Sites ultra-rapides et optimisés" },
-              { title: "Conversion", desc: "Maximisez vos ventes et rendez-vous" },
-            ].map((feature, index) => (
-              <EnhancedReveal
-                key={feature.title}
-                direction="up"
-                delay={index * 0.15}
-                distance={40}
-                enableColorTransition
-                colorClasses={["text-white", "text-pink-400", "text-blue-400", "text-emerald-400"]}
+          <WhyChooseUsSection />
+        </div>
+      </section>
+
+      {/* Gallery Section - Carousel */}
+      <section id="galerie" className="px-4 py-20 relative">
+        <ParallaxSection speed={0.2} className="absolute inset-0 -z-10">
+          <div className="absolute inset-0 bg-gradient-to-t from-purple-500/5 via-transparent to-pink-500/5 blur-3xl" />
+        </ParallaxSection>
+
+        <div className="mx-auto max-w-6xl relative z-10">
+          <EnhancedReveal direction="up" delay={0.1}>
+            <h2 className="mb-16 text-center text-4xl font-bold md:text-5xl text-white">
+              <AnimatedGradientText
+                gradientClasses={[
+                  "from-pink-500 via-rose-500 to-orange-500",
+                  "from-blue-500 via-cyan-500 to-teal-500",
+                ]}
+                autoAnimateInterval={10000}
+                transitionDuration={4}
               >
-                <div className="rounded-xl bg-white/5 p-6 backdrop-blur-sm border border-white/10 hover:border-white/20 transition-all duration-300 hover:scale-105">
-                  <h3 className="mb-3 text-xl font-semibold text-white">
-                    <AnimatedGradientText
-                      gradientClasses={[
-                        "from-pink-500 via-rose-500 to-orange-500",
-                        "from-blue-500 via-cyan-500 to-teal-500",
-                      ]}
-                      autoAnimateInterval={10000}
-                      transitionDuration={4}
-                    >
-                      {feature.title}
-                    </AnimatedGradientText>
-                  </h3>
-                  <p className="text-white/70">{feature.desc}</p>
-                </div>
-              </EnhancedReveal>
-            ))}
-          </div>
+                Nos réalisations
+              </AnimatedGradientText>
+            </h2>
+          </EnhancedReveal>
+
+          <ProjectsCarousel />
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section className="px-4 py-20 relative">
+        <ParallaxSection speed={0.1} className="absolute inset-0 -z-10">
+          <div className="absolute inset-0 bg-gradient-to-t from-pink-500/5 via-transparent to-blue-500/5 blur-3xl" />
+        </ParallaxSection>
+
+        <div className="mx-auto max-w-5xl relative z-10">
+          <ContactSection />
         </div>
       </section>
 
@@ -196,7 +158,7 @@ export default function Page() {
             <EnhancedReveal direction="fade" delay={0.1}>
               <p className="mb-2 text-sm text-white/90">
                 Réalisé par{" "}
-                <Link href="mailto:contact@agence.com" className="hover:underline transition-colors inline-block">
+                <Link href="mailto:contact@pointsource.fr" className="hover:underline transition-colors inline-block">
                   <AnimatedGradientText
                     gradientClasses={[
                       "from-pink-500 via-rose-500 to-orange-500",
@@ -205,14 +167,14 @@ export default function Page() {
                     autoAnimateInterval={10000}
                     transitionDuration={4}
                   >
-                    Votre Agence
+                    PointSource
                   </AnimatedGradientText>
                 </Link>
               </p>
             </EnhancedReveal>
             <EnhancedReveal direction="fade" delay={0.2}>
-              <Link href="mailto:contact@agence.com" className="text-sm text-white/80 hover:text-white hover:underline transition-colors">
-                contact@agence.com
+              <Link href="mailto:contact@pointsource.fr" className="text-sm text-white/80 hover:text-white hover:underline transition-colors">
+                contact@pointsource.fr
               </Link>
             </EnhancedReveal>
           </div>

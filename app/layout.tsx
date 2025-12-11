@@ -2,6 +2,8 @@ import type React from "react"
 import type { Metadata } from "next"
 import "./globals.css"
 import { SmoothScroll } from "@/components/smooth-scroll"
+import { IntroLogo } from "@/components/intro-logo"
+import { Toaster } from "sonner"
 
 export const metadata: Metadata = {
   title: "Digital Showroom - Sites web qui remplissent votre agenda",
@@ -31,7 +33,19 @@ html { font-family: var(--font-sans); }
         `}</style>
       </head>
       <body>
+        <IntroLogo />
         <SmoothScroll>{children}</SmoothScroll>
+        <Toaster
+          theme="dark"
+          toastOptions={{
+            style: {
+              background: "rgba(10, 10, 10, 0.9)",
+              backdropFilter: "blur(12px)",
+              border: "1px solid rgba(255, 255, 255, 0.1)",
+              color: "white",
+            },
+          }}
+        />
       </body>
     </html>
   )

@@ -5,17 +5,20 @@ import type React from "react"
 import { useState } from "react"
 import { motion } from "framer-motion"
 
+import Image from "next/image"
+
 interface BrowserMockupCardProps {
   title: string
   gradient: string
   href: string
+  imageSrc?: string
 }
 
-export function BrowserMockupCard({ title, gradient, href }: BrowserMockupCardProps) {
+export function BrowserMockupCard({ title, gradient, href, imageSrc }: BrowserMockupCardProps) {
   const [rotateX, setRotateX] = useState(0)
   const [rotateY, setRotateY] = useState(0)
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+  const handleMouseMove = (e: React.MouseEvent<HTMLAnchorElement>) => {
     const card = e.currentTarget
     const rect = card.getBoundingClientRect()
     const x = e.clientX - rect.left
@@ -63,9 +66,19 @@ export function BrowserMockupCard({ title, gradient, href }: BrowserMockupCardPr
           <div className="h-2 w-2 rounded-full bg-green-500/70" />
         </div>
 
-        {/* Content - Gradient Rectangle */}
+        {/* Content - Gradient Rectangle or Image */}
         <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
-          <div className={`h-full w-full bg-gradient-to-br ${gradient} opacity-80`} />
+          {imageSrc ? (
+            <Image
+              src={imageSrc}
+              alt={title}
+              fill
+              className="object-cover object-top"
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
+          ) : (
+            <div className={`h-full w-full bg-gradient-to-br ${gradient} opacity-80`} />
+          )}
           <div className="absolute inset-0 bg-black/10" />
         </div>
 
