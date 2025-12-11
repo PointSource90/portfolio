@@ -89,10 +89,10 @@ export function ProjectsCarousel() {
 
                 {/* Carousel Container */}
                 <motion.div
-                    initial={{ opacity: 0, y: 30 }}
+                    initial={{ opacity: 0, y: 40 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
                     className="overflow-hidden rounded-3xl bg-white/5 p-4 md:p-6 ring-1 ring-white/10"
                 >
                     {/* Browser Chrome */}

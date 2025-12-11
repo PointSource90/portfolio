@@ -85,13 +85,16 @@ export function WhyChooseUsSection() {
                 {advantages.map((advantage, index) => (
                     <motion.div
                         key={advantage.title}
-                        initial={{ y: 30, opacity: 0 }}
+                        initial={{ y: 40, opacity: 0 }}
                         whileInView={{ y: 0, opacity: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: index * 0.08, duration: 0.4 }}
+                        viewport={{ once: true, margin: "-100px" }}
+                        transition={{
+                            delay: index * 0.05,
+                            duration: 0.5,
+                            ease: [0.25, 0.46, 0.45, 0.94]
+                        }}
                         whileHover={{ scale: 1.02, y: -4 }}
                         whileTap={{ scale: 0.98 }}
-                        style={{ willChange: "transform" }}
                         className="group relative overflow-hidden rounded-2xl bg-white/5 p-6 ring-1 ring-white/10 backdrop-blur-sm transition-colors duration-200 hover:bg-white/10 hover:ring-white/20 cursor-default"
                     >
                         <div className={`absolute -top-20 -right-20 w-40 h-40 bg-gradient-to-br ${advantage.gradient} opacity-20 rounded-full blur-3xl group-hover:opacity-40 transition-opacity duration-200`} />
@@ -107,10 +110,10 @@ export function WhyChooseUsSection() {
 
             {/* Comparison Table */}
             <motion.div
-                initial={{ y: 30, opacity: 0 }}
+                initial={{ y: 40, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.2 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
             >
                 <h3 className="text-2xl md:text-3xl font-bold text-center mb-8">
                     <AnimatedGradientText

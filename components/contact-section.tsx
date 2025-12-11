@@ -16,9 +16,10 @@ export function ContactSection() {
             <div className="relative z-10">
                 {/* Header */}
                 <motion.div
-                    initial={{ y: 30, opacity: 0 }}
+                    initial={{ y: 40, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
                     className="text-center mb-12"
                 >
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
@@ -42,10 +43,10 @@ export function ContactSection() {
                 <div className="grid gap-6 sm:grid-cols-3 mb-12">
                     <motion.a
                         href="mailto:contact@pointsource.fr"
-                        initial={{ y: 30, opacity: 0 }}
+                        initial={{ y: 40, opacity: 0 }}
                         whileInView={{ y: 0, opacity: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.1, duration: 0.3 }}
+                        viewport={{ once: true, margin: "-100px" }}
+                        transition={{ delay: 0.05, duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
                         whileHover={{ scale: 1.02, y: -3 }}
                         whileTap={{ scale: 0.98 }}
                         style={{ willChange: "transform" }}
@@ -62,10 +63,10 @@ export function ContactSection() {
 
                     <motion.a
                         href="tel:+33600000000"
-                        initial={{ y: 30, opacity: 0 }}
+                        initial={{ y: 40, opacity: 0 }}
                         whileInView={{ y: 0, opacity: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.15, duration: 0.3 }}
+                        viewport={{ once: true, margin: "-100px" }}
+                        transition={{ delay: 0.1, duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
                         whileHover={{ scale: 1.02, y: -3 }}
                         whileTap={{ scale: 0.98 }}
                         style={{ willChange: "transform" }}
@@ -84,10 +85,10 @@ export function ContactSection() {
                         href="https://wa.me/33600000000"
                         target="_blank"
                         rel="noopener noreferrer"
-                        initial={{ y: 30, opacity: 0 }}
+                        initial={{ y: 40, opacity: 0 }}
                         whileInView={{ y: 0, opacity: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.2, duration: 0.3 }}
+                        viewport={{ once: true, margin: "-100px" }}
+                        transition={{ delay: 0.15, duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
                         whileHover={{ scale: 1.02, y: -3 }}
                         whileTap={{ scale: 0.98 }}
                         style={{ willChange: "transform" }}
